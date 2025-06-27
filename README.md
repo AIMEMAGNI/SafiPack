@@ -1,97 +1,64 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# SafiPack Mobile App
 
-# Getting Started
+**SafiPack** is an innovative mobile application dedicated to promoting sustainable packaging choices across Kigali and Rwanda. By harnessing AI-powered image recognition and eco-scoring technology, SafiPack empowers consumers and businesses alike to make environmentally responsible decisions—one package at a time.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+## Overview
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+In a world increasingly conscious of environmental impact, SafiPack offers a practical, user-friendly tool to evaluate product packaging sustainability. Users can quickly scan packaging, receive an eco-score, and identify packaging materials such as plastic, cardboard, or biodegradable substances. This transparency helps foster greener habits and supports Rwanda’s growing commitment to environmental stewardship.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
 
-```sh
-# Using npm
-npm start
+## Key Features
 
-# OR using Yarn
-yarn start
-```
+* **Secure Authentication:** Easy sign-up and login functionality ensures user data is private and secure.
 
-## Step 2: Build and run your app
+* **Packaging Scan:** Capture or upload photos of product packaging for instant analysis.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+* **Eco-Score & Material Detection:** Get immediate feedback on the packaging’s environmental impact, with clear identification of material type.
 
-### Android
+* **Scan History:** Review all previous scans with detailed insights to track your sustainable choices over time.
 
-```sh
-# Using npm
-npm run android
+* **Intuitive Home Screen:** Navigate smoothly through the app’s main features with a clean and accessible interface.
 
-# OR using Yarn
-yarn android
-```
 
-### iOS
+## User Flow
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+1. **Authentication:** New users register or returning users log in to start using SafiPack.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+2. **Scan Packaging:** Users scan product packaging photos to get sustainability details.
 
-```sh
-bundle install
-```
+3. **View Data:** Results display eco-scores and packaging material types clearly.
 
-Then, and every time you update your native dependencies, run:
+4. **History Access:** Users browse their scan history to monitor progress and impact.
 
-```sh
-bundle exec pod install
-```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## Technical Architecture
 
-```sh
-# Using npm
-npm run ios
+SafiPack is developed with **React Native** to deliver a seamless experience on both Android and iOS devices. The app features a modular design with dedicated screens for each core function:
 
-# OR using Yarn
-yarn ios
-```
+* **AuthScreen:** Manages user login and registration processes securely.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+* **HomeScreen:** The central hub for accessing key app features.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+* **ScanScreen:** Enables packaging photo capture and submission for analysis.
 
-## Step 3: Modify your app
+* **DataScreen:** Displays detailed scan results including eco-score and material information.
 
-Now that you have successfully run the app, let's make changes!
+* **HistoryScreen:** Shows a chronological list of past scans with their respective details.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+This clean structure allows for easy maintenance and future feature enhancements.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## Privacy & Security
 
-## Congratulations! :tada:
+Protecting user data is a top priority. SafiPack ensures all personal information and scan data are stored securely, with strict privacy measures and encryption protocols to maintain user trust.
 
-You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
+## Why SafiPack?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+SafiPack uniquely addresses the environmental challenges faced locally in Rwanda by making sustainability tangible and actionable. By simplifying the assessment of packaging materials and their impact, SafiPack supports Rwanda’s green initiatives and empowers users to become active participants in reducing environmental waste.
 
-# Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Join the SafiPack Movement!
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Download SafiPack today to make informed, sustainable packaging choices. Together, we can build a cleaner, greener Rwanda—one scan at a time.
