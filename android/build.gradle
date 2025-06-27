@@ -5,16 +5,19 @@ buildscript {
         compileSdkVersion = 35
         targetSdkVersion = 35
         ndkVersion = "27.1.12297006"
-        kotlinVersion = "2.1.20"
+        kotlinVersion = "1.9.10" // stable Kotlin version as of 2025-06
+        googleServicesVersion = "4.3.15" // if using google services plugin
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("com.android.tools.build:gradle:8.0.2") // match your gradle version
+        classpath("com.facebook.react:react-native-gradle-plugin:0.74.0") // example latest RN plugin version, adjust as needed
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        // Add google services plugin if you use Firebase:
+        classpath("com.google.gms:google-services:$googleServicesVersion")
     }
 }
 

@@ -1,28 +1,36 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { onAuthStateChanged, User } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, View } from 'react-native';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { auth } from './firebaseConfig.js';
+import MainNavigation from './navigation/MainNavigation';
+import AuthScreen from './screens/AuthScreen';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+// Configure Google Sign-In once at app start
+GoogleSignin.configure({
+  webClientId: '527994459698-0smcn7ncsnt2gdafnukvhjbuiegde4f1.apps.googleusercontent.com', // your webClientId
 });
 
-export default App;
+export default function App() {
+  const [user, setUser] = useState<User | null>(null);
+  const [initializing, setInitializing] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if (initializing) setInitializing(false);
+    });
+    return unsubscribe; // unsubscribe on unmount
+  }, [initializing]);
+
+  if (initializing) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color="#008080" />
+      </View>
+    );
+  }
+
+  return user ? <MainNavigation /> : <AuthScreen />;
+}
