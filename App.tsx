@@ -1,19 +1,14 @@
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { onAuthStateChanged, User } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+// App.js
+import { onAuthStateChanged } from 'firebase/auth';
+import { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
-import { auth } from './firebaseConfig.js';
+import { auth } from './firebaseConfig';
 import MainNavigation from './navigation/MainNavigation';
 import AuthScreen from './screens/AuthScreen';
 
-// Configure Google Sign-In once at app start
-GoogleSignin.configure({
-  webClientId: '527994459698-0smcn7ncsnt2gdafnukvhjbuiegde4f1.apps.googleusercontent.com', // your webClientId
-});
-
 export default function App() {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState(null);
   const [initializing, setInitializing] = useState(true);
 
   useEffect(() => {
@@ -21,7 +16,7 @@ export default function App() {
       setUser(currentUser);
       if (initializing) setInitializing(false);
     });
-    return unsubscribe; // unsubscribe on unmount
+    return unsubscribe;
   }, [initializing]);
 
   if (initializing) {
