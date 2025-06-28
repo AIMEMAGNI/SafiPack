@@ -4,7 +4,6 @@ firebaseConfig.ts
 #
 .DS_Store
 
-
 # Xcode
 #
 build/
